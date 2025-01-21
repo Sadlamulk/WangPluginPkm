@@ -31,8 +31,10 @@ namespace WangPluginPkm.GUI
             Xor,
         }
         public static Shinytype shinyflag = Shinytype.Star;
+
         private ISaveFileProvider SAV { get; }
         private IPKMView Editor { get; }
+
         public ShinyMakerUI(ISaveFileProvider sav, IPKMView editor)
         {
             SAV = sav;
@@ -674,6 +676,31 @@ namespace WangPluginPkm.GUI
                 }
             }
             return pkm;
+        }
+        private void GEN1GEN2_SHING_Click(object sender, EventArgs e)
+        {
+            sw.Start();
+            switch (T)
+            {
+                case ShinyRange.BOX:
+                    int i = SAV.CurrentBox;
+                    SAV.SAV.ModifyBoxes(GEN1GEN2SHING, i, i);
+                    break;
+                case ShinyRange.All:
+                    SAV.SAV.ModifyBoxes(GEN1GEN2SHING);
+                    break;
+            }
+            sw.Stop();
+            MessageBox.Show($"搞定啦！用时：{sw.ElapsedMilliseconds}毫秒", "SuperWang");
+            sw.Reset();
+        }
+        private static void GEN1GEN2SHING(PKM pkm)
+        {
+            pkm.IV_ATK = 15;
+            pkm.IV_DEF = 10;
+            pkm.IV_SPA = 10;
+            pkm.IV_SPD = 10;
+            pkm.IV_SPE = 10;
         }
     }
 }

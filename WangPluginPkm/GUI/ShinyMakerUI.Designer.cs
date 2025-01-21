@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 
 namespace WangPluginPkm.GUI
 {
@@ -22,11 +23,12 @@ namespace WangPluginPkm.GUI
             ForceStar = new Button();
             XorValue_Label = new Label();
             RangeBox = new ComboBox();
+            GEN1GEN2 = new Button();
             SuspendLayout();
             // 
             // ShinySID16_BTN
             // 
-            ShinySID16_BTN.Font = new System.Drawing.Font("黑体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            ShinySID16_BTN.Font = new System.Drawing.Font("黑体", 9F);
             ShinySID16_BTN.Location = new System.Drawing.Point(130, 54);
             ShinySID16_BTN.Name = "ShinySID16_BTN";
             ShinySID16_BTN.Size = new System.Drawing.Size(120, 30);
@@ -37,7 +39,7 @@ namespace WangPluginPkm.GUI
             // 
             // RandomStar_BTN
             // 
-            RandomStar_BTN.Font = new System.Drawing.Font("黑体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            RandomStar_BTN.Font = new System.Drawing.Font("黑体", 9F);
             RandomStar_BTN.Location = new System.Drawing.Point(130, 9);
             RandomStar_BTN.Name = "RandomStar_BTN";
             RandomStar_BTN.Size = new System.Drawing.Size(120, 30);
@@ -48,7 +50,7 @@ namespace WangPluginPkm.GUI
             // 
             // ForceSquare_BTN
             // 
-            ForceSquare_BTN.Font = new System.Drawing.Font("黑体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            ForceSquare_BTN.Font = new System.Drawing.Font("黑体", 9F);
             ForceSquare_BTN.Location = new System.Drawing.Point(400, 9);
             ForceSquare_BTN.Name = "ForceSquare_BTN";
             ForceSquare_BTN.Size = new System.Drawing.Size(120, 30);
@@ -67,7 +69,7 @@ namespace WangPluginPkm.GUI
             // 
             // Xor_BTN
             // 
-            Xor_BTN.Font = new System.Drawing.Font("黑体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            Xor_BTN.Font = new System.Drawing.Font("黑体", 9F);
             Xor_BTN.Location = new System.Drawing.Point(400, 54);
             Xor_BTN.Name = "Xor_BTN";
             Xor_BTN.Size = new System.Drawing.Size(120, 30);
@@ -78,7 +80,7 @@ namespace WangPluginPkm.GUI
             // 
             // ForceStar
             // 
-            ForceStar.Font = new System.Drawing.Font("黑体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            ForceStar.Font = new System.Drawing.Font("黑体", 9F);
             ForceStar.Location = new System.Drawing.Point(265, 9);
             ForceStar.Name = "ForceStar";
             ForceStar.Size = new System.Drawing.Size(120, 30);
@@ -90,7 +92,7 @@ namespace WangPluginPkm.GUI
             // XorValue_Label
             // 
             XorValue_Label.AutoSize = true;
-            XorValue_Label.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            XorValue_Label.Font = new System.Drawing.Font("Arial", 10.2F);
             XorValue_Label.Location = new System.Drawing.Point(261, 61);
             XorValue_Label.Name = "XorValue_Label";
             XorValue_Label.Size = new System.Drawing.Size(36, 16);
@@ -105,10 +107,22 @@ namespace WangPluginPkm.GUI
             RangeBox.Size = new System.Drawing.Size(112, 25);
             RangeBox.TabIndex = 7;
             // 
+            // GEN1GEN2
+            // 
+            GEN1GEN2.Font = new System.Drawing.Font("黑体", 9F);
+            GEN1GEN2.Location = new System.Drawing.Point(12, 54);
+            GEN1GEN2.Name = "GEN1GEN2";
+            GEN1GEN2.Size = new System.Drawing.Size(112, 30);
+            GEN1GEN2.TabIndex = 8;
+            GEN1GEN2.Text = "初代二代闪光";
+            GEN1GEN2.UseVisualStyleBackColor = true;
+            GEN1GEN2.Click += GEN1GEN2_SHING_Click;
+            // 
             // ShinyMakerUI
             // 
             AllowDrop = true;
             ClientSize = new System.Drawing.Size(549, 97);
+            Controls.Add(GEN1GEN2);
             Controls.Add(RangeBox);
             Controls.Add(XorValue_Label);
             Controls.Add(ForceStar);
@@ -128,5 +142,6 @@ namespace WangPluginPkm.GUI
         }
 
         private ComboBox RangeBox;
+        private Button GEN1GEN2;
     }
-}
+ }
